@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  color: rgb(128, 201, 128);
+  font-size: 1.75rem;
+}
+
+.box-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.box-wrap .box {
+  border: 1px solid goldenrod;
+  width: 30%;
+  margin: 1em;
+}
+
+.box-wrap .box-header {
+  background-color: palegoldenrod;
+  font-size: 1.5rem;
+  padding: 1em;
+}
+
+.box-wrap .box-cont {
+  background-color: #fff;
+  padding: 1em;
+  font-size: 1.125rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .box-wrap {
+    flex-direction: column;
+  }
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+}
+
+.item {
+  border: 1px solid black;
+  width: 3%;
+  height: 40px;
+}
