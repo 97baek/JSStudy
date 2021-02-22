@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .btn {
+        font-size: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">취소</button>
+    <script>
+      const btn = document.querySelector('.btn');
+      let loop;
+      let count = 0;
+
+      function sample() {
+        console.log('hello');
+        count++;
+        if (count % 60 === 0) {
+          console.log('action');
+        }
+        loop = requestAnimationFrame(sample);
+      }
+      sample();
+
+      btn.addEventListener('click', () => {
+        cancelAnimationFrame(loop);
+      });
+    </script>
+  </body>
+</html>

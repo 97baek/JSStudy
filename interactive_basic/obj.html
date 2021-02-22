@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 150px;
+        font-size: 3rem;
+        font-weight: bold;
+        border: 2px solid black;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    function Card(num, color) {
+      this.num = num;
+      this.color = color;
+      this.init();
+    }
+
+    Card.prototype = {
+      constructor: Card,
+      init: function (num, color) {
+        const newElem = document.createElement('div');
+        newElem.innerHTML = this.num;
+        newElem.style.color = this.color;
+        newElem.classList.add('card');
+        document.body.appendChild(newElem);
+      },
+    };
+
+    const card1 = new Card(1, 'blue');
+    const card2 = new Card(4, 'red');
+    const card3 = new Card(5, 'green');
+    const card4 = new Card(3, 'yellow');
+  </script>
+</html>

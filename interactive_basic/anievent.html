@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes ball-ani {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        100% {
+          transform: translate(100px, 100px);
+        }
+      }
+      .ball {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: red;
+        transition: 1s;
+        /* animation: ballani 1s 3 alternate; */
+      }
+
+      .ball.changeBlue {
+        background: dodgerblue;
+      }
+
+      .ball.changeGreen {
+        background: green;
+      }
+
+      .ball.makeBorder {
+        border: 10px solid dodgerblue;
+        transition: 3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball"></div>
+    <script>
+      const ballElem = document.querySelector('.ball');
+      let change = 1;
+      //   window.addEventListener('click', changeBall);
+
+      //   function changeBall(e) {
+      //     ballElem.style.transform = `translate(${e.clientX - 15}px,${e.clientY - 15}px)`;
+
+      //     if (change === 1) {
+      //       ballElem.classList.add('changeBlue');
+      //       change = 2;
+      //     } else if (change === 2) {
+      //       ballElem.classList.add('changeGreen');
+      //       change = 3;
+      //     } else if (change === 3) {
+      //       ballElem.classList.remove('changeBlue');
+      //       ballElem.classList.remove('changeGreen');
+      //       change = 1;
+      //     }
+      //   }
+
+      ballElem.addEventListener('click', aniBall);
+      ballElem.addEventListener('animationstart', aniStart);
+
+      function aniBall(e) {
+        ballElem.style.animation = 'ball-ani 1s 3 alternate forwards';
+        ballElem.classList.add('makeBorder');
+      }
+
+      function ballStart(e) {}
+    </script>
+  </body>
+</html>

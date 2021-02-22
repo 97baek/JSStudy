@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      img {
+        max-width: 100%;
+      }
+
+      .output {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 200;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .content {
+        background-color: yellowgreen;
+        height: 1000vh;
+        padding: 10%;
+      }
+
+      .ilbuni {
+        width: 100px;
+        margin: 20px auto;
+        transition: 1s;
+      }
+
+      .ilbuni.zoom {
+        transform: scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="output">output</div>
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus maiores, delectus
+        quibusdam neque quo quis saepe praesentium molestias minus nesciunt dicta voluptas adipisci,
+        error officia illo aspernatur blanditiis incidunt totam itaque fugit corrupti. Perferendis
+        quia sit reiciendis in, saepe repellat accusantium eligendi voluptate aliquam dolore commodi
+        quo ex voluptatibus, assumenda accusamus omnis. Facere possimus ipsum accusamus assumenda
+        itaque deleniti nobis corrupti, labore quisquam dolorum illum quia explicabo vero fuga
+        commodi doloribus consequuntur? Amet officiis in, nobis architecto adipisci consectetur
+        sint? Adipisci totam repudiandae, voluptatum a impedit autem qui, sed voluptatibus est quia
+        ratione eos, non libero quidem. Voluptatum ipsum ut molestias explicabo possimus harum
+        nesciunt commodi id excepturi? Asperiores consectetur earum ea tempora. Sit architecto,
+        debitis placeat et possimus, magnam voluptatibus repudiandae eligendi doloremque odit
+        distinctio nemo accusantium quasi quam nihil provident ex earum ea deleniti expedita!
+        Asperiores eaque aperiam nemo quasi. Voluptatibus, esse. Vitae laudantium nulla magni,
+        corporis, blanditiis labore eum dolore velit tenetur maxime minus voluptatibus? Dolorum
+        corporis molestias fuga sequi in corrupti! Itaque necessitatibus illo ullam alias iure eos
+        voluptatibus enim quam laudantium. Nulla eveniet earum odit distinctio nobis reprehenderit
+        aliquam. Ex perferendis modi doloremque illum provident corporis sapiente, non, cum libero
+        est illo quibusdam atque excepturi molestiae aliquid labore dolores obcaecati ipsum eius
+        facere! Incidunt ex similique consequuntur quis voluptatibus est corrupti iste eius ipsam
+        distinctio reprehenderit, nam perspiciatis, corporis tempore sed consequatur non illum
+        reiciendis tenetur. Quod, ab hic voluptatem ad cum dolor blanditiis minus repudiandae ullam,
+        corrupti maiores aliquid earum dignissimos deleniti. Optio laborum maiores eveniet expedita
+        laboriosam esse culpa asperiores repellat veritatis tenetur, corrupti fugit officiis rerum,
+        quam odio quas eligendi debitis facere doloribus exercitationem, illum natus. Similique
+        sapiente architecto delectus amet magnam dolorem? Sapiente obcaecati soluta officiis a,
+        perspiciatis sequi doloremque nam enim excepturi voluptas rem recusandae eius culpa
+        dignissimos error alias.
+      </p>
+      <figure class="ilbuni">
+        <img src="images/ilbuni_0.png" alt="일분이" />
+      </figure>
+    </div>
+    <script>
+      const outputElem = document.querySelector('.output');
+      const ilbuniElem = document.querySelector('.ilbuni');
+      let posY;
+
+      function showY() {
+        outputElem.innerText = ilbuniElem.getBoundingClientRect().y;
+        posY = ilbuniElem.getBoundingClientRect().y;
+        posY < window.innerHeight * 0.2
+          ? ilbuniElem.classList.add('zoom')
+          : ilbuniElem.classList.remove('zoom');
+      }
+
+      function init() {
+        window.addEventListener('scroll', () => {
+          // outputElem.innerText = window.pageYOffset;
+          // outputElem.innerText = window.offsetTop;
+          showY();
+        });
+      }
+
+      init();
+    </script>
+  </body>
+</html>
